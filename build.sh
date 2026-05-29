@@ -97,7 +97,7 @@ convert() {
     setup
     download_model
 
-    local venv_bin="$RUHMI_DIR/.venv/bin"
+    local venv_bin="$(pwd)/$RUHMI_DIR/.venv/bin"
     local python="$venv_bin/python"
     local model
     model="$(pwd)/$MODEL_FILE"
@@ -123,8 +123,8 @@ convert() {
 metrics() {
     convert
 
-    local python="$RUHMI_DIR/.venv/bin/python"
-    local out="$OUT_DIR/$COMPILED_DIR"
+    local python="$(pwd)/$RUHMI_DIR/.venv/bin/python"
+    local out="$(pwd)/$OUT_DIR/$COMPILED_DIR"
 
     if [ ! -d "$out" ]; then
         local candidate
